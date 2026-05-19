@@ -25,15 +25,10 @@ const initializeSocket = (server) => {
 
     socket.on('disconnect', () => {
       console.log(
-        `❌ Client disconnected: ${socket.id}`
+        `Client disconnected: ${socket.id}`
       );
     });
   });
-
-  /*
-    Qwen emitirá:
-    eventBus.emit('metrics:ready', payload)
-  */
 
   eventBus.on('metrics:ready', (payload) => {
     console.log(
